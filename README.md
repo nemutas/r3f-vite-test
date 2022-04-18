@@ -21,7 +21,7 @@ npm 6.x
 npm create vite@latest <project name> --template react-ts
 ```
 
-At this point, node_modules will not be installed, so the following must be done.
+At this point, `node_modules` will not be installed, so the following must be done.
 ```
 npm install
 ```
@@ -47,7 +47,7 @@ Add the following settings.
 	"deploy": "npm run build && gh-pages -d dist"
 },
 ```
-Vite defaults to "dist" as the output folder at build, so use "gh-pages -d dist".
+Vite defaults to `dist` as the output folder at build, so use `gh-pages -d dist`.
 
 ### vite.config.ts
 [Static Asset Handling](https://vitejs.dev/guide/assets.html)<br>
