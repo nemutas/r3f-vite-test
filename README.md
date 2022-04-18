@@ -5,7 +5,10 @@ The following has been set up.
 * Building a React environment with Typescript
 * Deploy to GitHub Pages using gh-pages
 
+https://nemutas.github.io/r3f-vite-test/
+
 # Create project
+### insetall
 [Getting Started](https://vitejs.dev/guide/#scaffolding-your-first-vite-project)
 
 npm 7.x
@@ -21,6 +24,12 @@ npm create vite@latest <project-name> --template react-ts
 At this point, node_modules will not be installed, so the following must be done.
 ```
 npm install
+```
+
+### tsconfig.json
+If library checks are enabled, they should be disabled.
+```
+"skipLibCheck": true,
 ```
 
 # Github Pages settings
@@ -40,7 +49,7 @@ Add the following settings.
 ```
 Vite defaults to "dist" as the output folder at build, so use "gh-pages -d dist".
 
-## vite.config.ts
+### vite.config.ts
 [Static Asset Handling](https://vitejs.dev/guide/assets.html)<br>
 If you want to create a `Public` folder directly under the project to manage resources, additional settings are required in `vite.config.ts`.
 ```.ts
@@ -54,7 +63,7 @@ export default defineConfig({
 })
 ```
 
-If you want to manage something like `public/images/hoge.jpg`, The code to retrieve the path is as follows
+If you want to manage something like `public/images/hoge.jpg`, The code to retrieve the path is as follows.
 ```.ts
 const path = (name: string) => `${import.meta.env.BASE_URL}images/${name}.jpg`
 ```
