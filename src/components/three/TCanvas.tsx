@@ -18,6 +18,7 @@ export const TCanvas: FC = () => {
 
 const ScreenPlane: FC = () => {
 	const { width, height } = useThree(state => state.viewport)
+
 	const path = (name: string) => `${import.meta.env.BASE_URL}images/${name}.jpg`
 	const textures = useTexture([path('wlop1'), path('wlop2')])
 
