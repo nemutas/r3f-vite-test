@@ -59,11 +59,12 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: '/<project-name>/'
+	base: '/<project name>/'
 })
 ```
 
 If you want to manage something like `public/images/hoge.jpg`, The code to retrieve the path is as follows.
+[in my code](https://github.com/nemutas/r3f-vite-test/blob/7e5baac352d22200af23acdf06996df6b3e3bfa3/src/components/three/TCanvas.tsx#L21)
 ```.ts
 const path = (name: string) => `${import.meta.env.BASE_URL}images/${name}.jpg`
 ```
