@@ -13,12 +13,12 @@ https://nemutas.github.io/r3f-vite-test/
 
 npm 7.x
 ```
-npm create vite@latest <project-name> -- --template react-ts
+npm create vite@latest <project name> -- --template react-ts
 ```
 
 npm 6.x
 ```
-npm create vite@latest <project-name> --template react-ts
+npm create vite@latest <project name> --template react-ts
 ```
 
 At this point, node_modules will not be installed, so the following must be done.
