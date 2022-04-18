@@ -1,6 +1,6 @@
 import React, { FC, Suspense, useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls, Plane, useTexture } from '@react-three/drei';
+import { Plane, useTexture } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { cnoise21 } from '../../modules/glsl';
 
@@ -9,20 +9,17 @@ export const TCanvas: FC = () => {
 
 	return (
 		<Canvas camera={OrthographicCamera} dpr={window.devicePixelRatio}>
-			<color attach="background" args={['#000']} />
-			{/* <OrbitControls /> */}
 			<Suspense fallback={null}>
 				<ScreenPlane />
 			</Suspense>
-			{/* helper */}
-			{/* <Stats /> */}
 		</Canvas>
 	)
 }
 
 const ScreenPlane: FC = () => {
 	const { width, height } = useThree(state => state.viewport)
-	const textures = useTexture(['/images/wlop1.jpg', '/images/wlop2.jpg'])
+	const path = (name: string) => `${import.meta.env.BASE_URL}images/${name}.jpg`
+	const textures = useTexture([path('wlop1'), path('wlop2')])
 
 	const shader: THREE.Shader = {
 		uniforms: {
