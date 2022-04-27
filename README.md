@@ -68,3 +68,27 @@ If you want to manage something like `public/images/hoge.jpg`, The code to retri
 ```.ts
 const path = (name: string) => `${import.meta.env.BASE_URL}images/${name}.jpg`
 ```
+
+# Plugin
+### [vite-plugin-glsl](https://www.npmjs.com/package/vite-plugin-glsl)
+```
+npm i -D vite-plugin-glsl
+```
+
+`vite.config.ts`
+```.ts
+import glsl from 'vite-plugin-glsl';
+
+export default defineConfig({
+	plugins: [glsl()]
+})
+```
+
+if you use typescript, must be add type define file.<br>
+`glsl.d.ts`
+```.ts
+declare module '*.glsl' {
+	const value: string
+	export default value
+}
+```
